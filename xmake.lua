@@ -3,15 +3,12 @@ set_languages("cxx20")
 set_xmakever("2.5.1")
 
 -- direct dependency version pinning
-add_requires("tiltedcore", "hopscotch-map v2.3.1", "snappy 1.1.10", "gamenetworkingsockets v1.4.1", "catch2 2.13.9", "libuv v1.48.0")
+add_requires("tiltedcore", "hopscotch-map v2.3.1", "snappy 1.1.10", "gamenetworkingsockets", "catch2 2.13.9", "libuv v1.48.0")
 
 -- dependencies' dependencies version pinning
 add_requireconfs("*.mimalloc", { version = "2.1.7", override = true })
 add_requireconfs("*.openssl", { version = "1.1.1-w", override = true })
 add_requireconfs("*.cmake", { version = "3.30.2", override = true })
--- REMOVED: protobuf and abseil overrides cause LNK2005 errors with gamenetworkingsockets
--- add_requireconfs("*.protobuf*", { version = "26.1", override = true }) 
--- add_requireconfs("**.abseil*", { version = "20250127.1", override = true })
 
 add_rules("mode.debug","mode.releasedbg", "mode.release")
 add_rules("plugin.vsxmake.autoupdate")
