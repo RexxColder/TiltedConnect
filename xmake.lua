@@ -9,6 +9,8 @@ add_requires("tiltedcore", "hopscotch-map v2.3.1", "snappy 1.1.10", "gamenetwork
 add_requireconfs("*.mimalloc", { version = "2.1.7", override = true })
 add_requireconfs("*.openssl", { version = "1.1.1-w", override = true })
 add_requireconfs("*.cmake", { version = "3.30.2", override = true })
+-- Force older abseil version that is compatible
+add_requireconfs("*.abseil*", { version = "20240722.0", override = true })
 
 add_rules("mode.debug","mode.releasedbg", "mode.release")
 add_rules("plugin.vsxmake.autoupdate")
