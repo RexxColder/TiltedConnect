@@ -4,7 +4,7 @@ set_xmakever("2.5.1")
 
 -- direct dependency version pinning
 if is_plat("linux") then
-    add_requires("tiltedcore", "hopscotch-map v2.3.1", "snappy 1.1.10", "gamenetworkingsockets >= 1.5.0", "catch2 2.13.9", "libuv v1.48.0")
+    add_requires("tiltedcore", "hopscotch-map v2.3.1", "snappy 1.1.10", "gamenetworkingsockets 1.5.1", "catch2 2.13.9", "libuv v1.48.0")
 else
     add_requires("tiltedcore", "hopscotch-map v2.3.1", "snappy 1.1.10", "gamenetworkingsockets", "catch2 2.13.9", "libuv v1.48.0")
 end
