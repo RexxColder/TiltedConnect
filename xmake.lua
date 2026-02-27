@@ -3,7 +3,11 @@ set_languages("cxx20")
 set_xmakever("2.5.1")
 
 -- direct dependency version pinning
-add_requires("tiltedcore", "hopscotch-map v2.3.1", "snappy 1.1.10", "gamenetworkingsockets", "catch2 2.13.9", "libuv v1.48.0")
+if is_plat("linux") then
+    add_requires("tiltedcore", "hopscotch-map v2.3.1", "snappy 1.1.10", "gamenetworkingsockets >= 1.5.0", "catch2 2.13.9", "libuv v1.48.0")
+else
+    add_requires("tiltedcore", "hopscotch-map v2.3.1", "snappy 1.1.10", "gamenetworkingsockets", "catch2 2.13.9", "libuv v1.48.0")
+end
 
 -- dependencies' dependencies version pinning
 add_requireconfs("*.mimalloc", { version = "2.1.7", override = true })
